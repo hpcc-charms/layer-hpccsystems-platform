@@ -1,0 +1,4 @@
+repo: https://github.com/hpcc-charms/hpccsystems-platform.git
+includes: 
+  - 'layer:hpccsystems-platform-base'
+  - 'interface:http'

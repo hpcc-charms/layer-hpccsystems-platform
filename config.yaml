@@ -1,0 +1,66 @@
+options:
+
+  hpcc-version:
+    type: string
+    default: 6.0.0-2
+    description: HPCCSystems Platform  package version
+
+  hpcc-type:
+    type: string
+    default: CE
+    description: |
+      HPCC Platform has three types: community (CE), enterprise(EE),
+      internal(LN). EE and LN are for private use only.
+
+  base-url:
+    type: string
+    default: http://cdn.hpccsystems.com/releases
+    #default: http://54.148.254.74/releases
+    #default: http://10.240.32.242/builds
+    description: | 
+      This is the base URL to download HPCC Platform package.
+      To use HPCC Platform community beta version set it to
+      http://cdn.hpccsystems.com/beta
+    
+  package-checksum:
+    type: string
+    default: ""
+    description: |
+      HPCC package checksum. The default value is for HPCC CE 5.4.6-1 Ubuntu
+      14.04 amd64. You can get other package checksums from:
+           http://hpccsystems.com/download
+      If the default value is empty string, checking is skipped.
+   
+  hash-type:
+    type: string
+    default: md5
+    description: hask type for checksum such as md5, sha1, sha256, sha512, etc
+
+  ssh-key-public:
+    type: string
+    default: ""
+    description: The content of public SSH Key
+
+  ssh-key-private:
+    type: string
+    default: ""
+    description: The content of private SSH Key
+
+
+# Reference HPCC Platform envgen usage for more details
+
+  slaves-per-node:
+    type: int
+    default: 1
+    description: Number of thor slaves per node. The recommended value is 1.
+
+  #not convenient to change port with evngen
+  #esp-port:
+  #  type: int
+  #  default: 8010
+  #  description: esp/ECLWatch port. The default is 8010.
+
+  #esp-secure-port:
+  #  type: int
+  #  default: 18010
+  #  description: eps/ECLWatch secure port. The default is 18010.
