@@ -29,6 +29,6 @@ from charms.reactive import when_not
 from charms.layer.hpccsystems_platform import HPCCSystemsPlatformConfig
 
 
-#@when('hpcc-esp.available')     
-#def configure_esp(esp):
-#    esp.configure(8010)
+@when('hpcc-esp.available')     
+def configure_esp(esp):
+    esp.configure(8010)

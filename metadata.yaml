@@ -27,7 +27,7 @@ provides:
   hpcc-esp:
     interface: http
 
-  plugin-config:
+  hpcc-plugins:
     interface: plugin
     optional:  true
     scope: container
