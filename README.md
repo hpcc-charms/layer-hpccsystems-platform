@@ -38,20 +38,8 @@ The HPCC Juju Charm encapsulates best practice configurations for the HPCC  Syst
 
         `juju ssh myhpcc/0`
 
-1. To deploy a HPCC cluster
-    `juju deploy hpcc <master name>`
-    `juju deploy hpcc <cluster name>`
-    `juju add-relation <master name>:support-node  <cluster name>:cluster`
-
 ECLWatch ip is the public ip of "master name"
 
-1.  Once HPCC is properly installed, you can add more nodes using this command:
-
-        `juju add-unit <cluster_name> -n <#_of_nodes_to_add>`
-
-    **For example:**
-
-        `juju add-unit cluster -n 3`
 
 1. You can expose the HPCC cluster by running:
 
@@ -61,21 +49,6 @@ Once the service is deployed, running, and exposed, you can find the address for
 
 For example, **nnn.nnn.nnn.nnn:8010**.
 
-
-
-
-# Configuration
-
-When you use the `juju add-unit` command to add nodes, scripts are called automatically to provide a default configuration.
-
-### ssh-keys ###
-The hpcc charm automatically generates a key pair  (*id\_rsa*  &  *id\_rsa.pub*) to configure nodes.
-
-If you already have your own key pair and wish to use it, copy and paste their contents into the two variables (*ssh-key-public* and *ssh-key-private*) in the configuration file (config.yaml) or in the Juju canvas configuration settings.
-
-Alternately, you can set these using this command:
-
-    juju set <hpcc service name> ssh-key-public=<public key> ssh-key-private=<private key>
 
 ###To update from prior version
 
@@ -88,14 +61,6 @@ Alternately, you can set these using this command:
 The charm uses an md5sum to verify the checksum of the HPCC platform  package before installing.
 
 For this version of the charm, it is set to check the md5sum for the Community Edition Version 5.4.2-1 for Ubuntu 14.04 amd64. To verify a different version, edition, or OS version, change the value of the md5sum in the package-checksum variable in config.yaml. You can get other package checksums from [http://hpccsystems.com/download](http://hpccsystems.com/download)
-
-###To reconfigure your topology
-
-You can reconfigure the topology of your system by setting the values for **support-nodes, slaves-per-node, roxie-ratio, thor-ratio** in the configuration file (config.yaml) or in the Juju canvas configuration settings.
-
-Alternately, you can set these using this command:
-
-    juju set <hpcc service name> roxie-ratio=<floating point value 0.0 – 1.0> > thor-ratio=<floating point value 0.0 – 1.0>
 
 ### Ports
 
