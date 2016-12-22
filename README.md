@@ -119,3 +119,9 @@ See [HPCC Systems Web site](http://HPCCSystems.com) for more details.
 
 For support, visit the HPCC Community Forums:
 [HPCC Community Forums](http://hpccsystems.com/bb/index.php?sid=0bda2dddb2ea50418357171d33b11e5f)
+
+
+# Implementation #
+This charm inherit layer-hpccystems-platform-base charm. This is desgined to use as a single node HPCCSystems Platform with all supported HPCCSystems plugins and modules.
+
+![alt Hierarchy Diagram] (images/layer-hpccsystems-platform.jpg)
