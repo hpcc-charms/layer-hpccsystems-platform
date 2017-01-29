@@ -2,7 +2,7 @@ options:
 
   hpcc-version:
     type: string
-    default: 6.0.0-2
+    default: 6.2.4-1
     description: HPCCSystems Platform  package version
 
   hpcc-type:

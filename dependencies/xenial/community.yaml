@@ -16,4 +16,4 @@ packages:
  - expect
  - rsync
  - zip
- - libatlas3-base
+ - libblas3
